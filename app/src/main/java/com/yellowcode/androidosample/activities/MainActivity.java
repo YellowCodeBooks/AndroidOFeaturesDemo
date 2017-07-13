@@ -46,29 +46,7 @@ public class MainActivity extends AppCompatActivity {
         nvNotificationChannels.setPinButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    ShortcutManager mShortcutManager = mContext.getSystemService(ShortcutManager.class);
-
-                    if (mShortcutManager.isRequestPinShortcutSupported()) {
-                        // Assumes there's already a shortcut with the ID "my-shortcut".
-                        // The shortcut must be enabled.
-                        ShortcutInfo pinShortcutInfo = new ShortcutInfo.Builder(mContext, "shortcut_notification_channels").build();
-
-                        // Create the PendingIntent object only if your app needs to be notified
-                        // that the user allowed the shortcut to be pinned. Note that, if the
-                        // pinning operation fails, your app isn't notified. We assume here that the
-                        // app has implemented a method called createShortcutResultIntent() that
-                        // returns a broadcast intent.
-                        Intent pinnedShortcutCallbackIntent = mShortcutManager.createShortcutResultIntent(pinShortcutInfo);
-
-                        // Configure the intent so that your app's broadcast receiver gets
-                        // the callback successfully.
-                        PendingIntent successCallback = PendingIntent.getBroadcast(mContext, 0, pinnedShortcutCallbackIntent, 0);
-                        mShortcutManager.requestPinShortcut(pinShortcutInfo, successCallback.getIntentSender());
-                    }
-                } else {
-                    Toast.makeText(mContext, getString(R.string.txt_do_not_support_android_version), Toast.LENGTH_SHORT).show();
-                }
+                pinShortcut("shortcut_notification_channels");
             }
         });
 
@@ -79,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentPip = new Intent(mContext, PictureInPictureActivity.class);
                 startActivity(intentPip);
                 finish();
+            }
+        });
+        nvPip.setPinButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pinShortcut("shortcut_pip");
             }
         });
 
@@ -96,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentDownloadFonts);
             }
         });
+        nvDownloadableFonts.setPinButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pinShortcut("shortcut_downloadable_font");
+            }
+        });
 
         nvAutoSizingTextView.setNavigationButtonClickListener(new View.OnClickListener() {
             @Override
@@ -104,5 +94,37 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentAutosizingTextView);
             }
         });
+        nvAutoSizingTextView.setPinButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pinShortcut("shortcut_autosizing_textview");
+            }
+        });
+    }
+
+    private void pinShortcut(String shortcutId) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            ShortcutManager mShortcutManager = mContext.getSystemService(ShortcutManager.class);
+
+            if (mShortcutManager.isRequestPinShortcutSupported()) {
+                // Assumes there's already a shortcut with the ID "my-shortcut".
+                // The shortcut must be enabled.
+                ShortcutInfo pinShortcutInfo = new ShortcutInfo.Builder(mContext, shortcutId).build();
+
+                // Create the PendingIntent object only if your app needs to be notified
+                // that the user allowed the shortcut to be pinned. Note that, if the
+                // pinning operation fails, your app isn't notified. We assume here that the
+                // app has implemented a method called createShortcutResultIntent() that
+                // returns a broadcast intent.
+                Intent pinnedShortcutCallbackIntent = mShortcutManager.createShortcutResultIntent(pinShortcutInfo);
+
+                // Configure the intent so that your app's broadcast receiver gets
+                // the callback successfully.
+                PendingIntent successCallback = PendingIntent.getBroadcast(mContext, 0, pinnedShortcutCallbackIntent, 0);
+                mShortcutManager.requestPinShortcut(pinShortcutInfo, successCallback.getIntentSender());
+            }
+        } else {
+            Toast.makeText(mContext, getString(R.string.txt_do_not_support_android_version), Toast.LENGTH_SHORT).show();
+        }
     }
 }
