@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_normal">
+
+    <TextView
+        android:id="@+id/tv_none"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:maxLines="4"
+        android:text="@string/txt_autosizing_textview_none"
+        app:autoSizeTextType="none" />
+
+    <SeekBar
+        android:id="@+id/sb_none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:min="0"
+        android:progress="100" />
+
+    <TextView
+        android:id="@+id/tv_default"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/padding_normal"
+        android:maxLines="4"
+        android:text="@string/txt_autosizing_textview_autosize_default"
+        app:autoSizeTextType="uniform" />
+
+    <SeekBar
+        android:id="@+id/sb_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:min="0"
+        android:progress="100" />
+
+    <TextView
+        android:id="@+id/tv_granularity"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/padding_normal"
+        android:maxLines="4"
+        android:text="@string/txt_autosizing_textview_autosize_granularity"
+        android:textSize="20sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeMinTextSize="14sp"
+        app:autoSizeStepGranularity="4sp"
+        app:autoSizeTextType="uniform" />
+
+    <SeekBar
+        android:id="@+id/sb_granularity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:min="0"
+        android:progress="100" />
+
+    <TextView
+        android:id="@+id/tv_preset_size"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/padding_normal"
+        android:maxLines="4"
+        android:text="@string/txt_autosizing_textview_autosize_preset_size"
+        app:autoSizePresetSizes="@array/autosize_text_sizes"
+        app:autoSizeTextType="uniform" />
+
+    <SeekBar
+        android:id="@+id/sb_preset_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:min="0"
+        android:progress="100" />
+
+</LinearLayout>

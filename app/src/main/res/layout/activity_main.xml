@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_normal">
+
+        <com.yellowcode.androidosample.utils.NavigationItem
+            android:id="@+id/btn_notification_channels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:infoText="@string/txt_main_go_to_notification_channel_info"
+            app:labelText="@string/txt_main_go_to_notification_channel_text"
+            app:imageColor="@android:color/holo_red_dark" />
+
+        <com.yellowcode.androidosample.utils.NavigationItem
+            android:id="@+id/btn_pip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:infoText="@string/txt_main_go_to_pip_info"
+            app:labelText="@string/txt_main_go_to_pip_text"
+            app:imageColor="@android:color/holo_blue_dark" />
+
+        <com.yellowcode.androidosample.utils.NavigationItem
+            android:id="@+id/btn_auto_fill_framework"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:infoText="@string/txt_main_go_to_autofill_info"
+            app:labelText="@string/txt_main_go_to_autofill_text"
+            app:imageColor="@android:color/holo_green_dark" />
+
+        <com.yellowcode.androidosample.utils.NavigationItem
+            android:id="@+id/btn_downloadable_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:infoText="@string/txt_main_go_to_downloadable_font_info"
+            app:labelText="@string/txt_main_go_to_downloadable_font_text"
+            app:imageColor="@android:color/holo_orange_dark" />
+
+        <com.yellowcode.androidosample.utils.NavigationItem
+            android:id="@+id/btn_autosizing_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:infoText="@string/txt_main_go_to_autosizing_textview_info"
+            app:labelText="@string/txt_main_go_to_autosizing_textview_text"
+            app:imageColor="@android:color/holo_purple" />
+
+    </LinearLayout>
+
+</ScrollView>
