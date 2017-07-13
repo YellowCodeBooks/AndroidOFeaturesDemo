@@ -32,9 +32,9 @@ public class NotificationChannelsActivity extends AppCompatActivity implements V
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification_channels);
 
-        btnGroup1Channel1 = (Button) findViewById(R.id.btn_group1_channel1);
-        btnGroup1Channel2 = (Button) findViewById(R.id.btn_group1_channel2);
-        btnGroup2Channel1 = (Button) findViewById(R.id.btn_group2_channel1);
+        btnGroup1Channel1 = findViewById(R.id.btn_group1_channel1);
+        btnGroup1Channel2 = findViewById(R.id.btn_group1_channel2);
+        btnGroup2Channel1 = findViewById(R.id.btn_group2_channel1);
 
         btnGroup1Channel1.setOnClickListener(this);
         btnGroup1Channel2.setOnClickListener(this);

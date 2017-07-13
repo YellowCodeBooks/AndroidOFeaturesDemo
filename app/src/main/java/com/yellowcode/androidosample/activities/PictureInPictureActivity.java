@@ -18,7 +18,7 @@ public class PictureInPictureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_in_picture);
 
-        btnEnterPipMode = (Button) findViewById(R.id.btn_enter_pip_mode);
+        btnEnterPipMode = findViewById(R.id.btn_enter_pip_mode);
 
         btnEnterPipMode.setOnClickListener(new View.OnClickListener() {
             @Override
