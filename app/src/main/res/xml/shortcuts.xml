@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_web"
+        android:shortcutId="shortcut_notification_channels"
+        android:shortcutLongLabel="@string/txt_main_go_to_notification_channel_info"
+        android:shortcutShortLabel="@string/txt_main_go_to_notification_channel_text">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.yellowcode.androidosample.activities.NotificationChannelsActivity"
+            android:targetPackage="com.yellowcode.androidosample" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_web"
+        android:shortcutId="shortcut_pip"
+        android:shortcutLongLabel="@string/txt_main_go_to_pip_info"
+        android:shortcutShortLabel="@string/txt_main_go_to_pip_text">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.yellowcode.androidosample.activities.PictureInPictureActivity"
+            android:targetPackage="com.yellowcode.androidosample" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_web"
+        android:shortcutId="shortcut_downloadable_font"
+        android:shortcutLongLabel="@string/txt_main_go_to_downloadable_font_info"
+        android:shortcutShortLabel="@string/txt_main_go_to_downloadable_font_text">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.yellowcode.androidosample.activities.DownloadableFontsActivity"
+            android:targetPackage="com.yellowcode.androidosample" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_web"
+        android:shortcutId="shortcut_autosizing_textview"
+        android:shortcutLongLabel="@string/txt_main_go_to_autosizing_textview_info"
+        android:shortcutShortLabel="@string/txt_main_go_to_autosizing_textview_text">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.yellowcode.androidosample.activities.AutosizingTextViewActivity"
+            android:targetPackage="com.yellowcode.androidosample" />
+    </shortcut>
+</shortcuts>

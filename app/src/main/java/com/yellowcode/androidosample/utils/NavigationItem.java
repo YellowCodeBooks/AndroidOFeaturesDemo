@@ -33,7 +33,10 @@ import android.widget.TextView;
 import com.yellowcode.androidosample.R;
 
 public class NavigationItem extends FrameLayout {
-    CardView mCardView;
+
+    private CardView mCardView;
+    private InfoButton infoButton;
+    private InfoButton pinButton;
 
     public NavigationItem(Context context) {
         this(context, null);
@@ -66,13 +69,21 @@ public class NavigationItem extends FrameLayout {
         buttonLabel.setText(labelText);
         buttonLabel.setCompoundDrawablesRelativeWithIntrinsicBounds(logoDrawable, null,
                 null, null);
-        InfoButton infoButton = rootView.findViewById(R.id.infoButton);
+
+        infoButton = rootView.findViewById(R.id.infoButton);
         infoButton.setInfoText(infoText);
         infoButton.setColorFilter(imageColor);
+
+        pinButton = rootView.findViewById(R.id.pinButton);
+
         mCardView = rootView.findViewById(R.id.cardView);
     }
 
     public void setNavigationButtonClickListener(@Nullable OnClickListener l) {
         mCardView.setOnClickListener(l);
+    }
+
+    public void setPinButtonClickListener(@Nullable OnClickListener l) {
+        pinButton.setOnClickListener(l);
     }
 }

@@ -14,8 +14,11 @@
  * limitations under the License.
 -->
 <resources>
+
+    <!-- Application -->
     <string name="app_name">AndroidOSample</string>
 
+    <!-- Main Screen -->
     <string name="txt_main_go_to_notification_channel_text">Demo Notification Channels</string>
     <string name="txt_main_go_to_notification_channel_info">-Creating a notification channel\n-Creating a notification channel Group\n-Modify Notification badges</string>
     <string name="txt_main_go_to_pip_text">Demo Picture-inPicture Mode</string>
@@ -26,10 +29,16 @@
     <string name="txt_main_go_to_downloadable_font_info">Using Downloadable Fonts via Android Studio and Google Play services.</string>
     <string name="txt_main_go_to_autosizing_textview_text">Demo Autosizing TextView</string>
     <string name="txt_main_go_to_autosizing_textview_info">You can control:\n-None resizing\n-Resizing Default\n-Resizing Granularity\n-Resizing Preset Sizes</string>
+
+    <!-- Autosizing TextView Screen -->
     <string name="txt_autosizing_textview_none">This is the normal text, nothing happen with the size of this, you can try.</string>
     <string name="txt_autosizing_textview_autosize_default">This is the sizing text, but every sizing thing is default, you can try.</string>
     <string name="txt_autosizing_textview_autosize_granularity">This is the sizing text, but using some specifies and granularity to control the step, you can try.</string>
     <string name="txt_autosizing_textview_autosize_preset_size">This is the sizing text, but using a XML file to declare each step of sizing, you can try.</string>
+
+    <!-- App Shortcut -->
+    <string name="txt_app_shortcut_go_web_short">Visit my web</string>
+    <string name="txt_app_shortcut_go_web_long">Click here to go to Yellow Code Books website</string>
 
     <string name="txt_do_not_support_android_version">Sorry, this version of Android do not support this function</string>
 </resources>
